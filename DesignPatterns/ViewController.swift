@@ -8,12 +8,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var person: Person!
+    @IBOutlet weak var greetingLabel: UILabel!
+    @IBOutlet weak var showGreetingButton: UIButton!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+    }
+    
+    @IBAction func didTapButton(_ sender: UIButton) {
+        let greeting = "Hello" + " " + Person.testPerson.firstName + " " + Person.testPerson.lastName
+        greetingLabel.text = greeting
     }
 
-
 }
-
