@@ -8,19 +8,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var person: Person!
-    @IBOutlet weak var greetingLabel: UILabel!
-    @IBOutlet weak var showGreetingButton: UIButton!
-
+    // var person: Person!
+    
+    @IBOutlet var tapButton: UIView!
+    @IBOutlet weak var buttonTappedLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
+    var buttonCounter = 0
+    
     @IBAction func didTapButton(_ sender: UIButton) {
-        let greeting = "Hello" + " " + Person.testPerson.firstName + " " + Person.testPerson.lastName
-        greetingLabel.text = greeting
+        buttonCounter += 1
+        buttonTappedLabel.text = "Button tapped " + String(buttonCounter)
+        
     }
+    
 
 }
